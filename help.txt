@@ -1,0 +1,56 @@
+<div class="hack-slider">
+
+   <div class="hack-slides">
+
+      <div class="slide">A hacker is one who enjoys the intellectual challenge of creatively overcoming and circumventing limitations of programming systems and who tries to extend their capabilities. The act of engaging in activities (such as programming or other media)
+         in a spirit of playfulness and exploration is termed hacking.</div>
+      <div class="slide">However the defining characteristic of a hacker is not the activities performed themselves (e.g. programming), but the manner in which it is done: Hacking entails some form of excellence, for example exploring the limits of what is possible, thereby
+         doing something exciting and meaningful.</div>
+      
+      <div class="slide">Hackers from this subculture tend to emphatically differentiate themselves from what they pejoratively call "crackers"; those who are generally referred to by media and members of the general public using the term "hacker", and whose primary focus—​be
+         it to malign or malevolent purposes—​lies in exploiting weaknesses in computer security.</div>
+
+   </div>
+
+   <div class="shapes"></div>
+
+   <div class="arrows">
+      <div class="arrow-left arrow"><</div>
+      <div class="arrow-right arrow">></div>
+   </div>
+
+ </div>
+ -----------------------------------------------------------------
+             <div class="section-text align-center mbr-fonts-style display-7"> 
+			
+					<div class="hack-slider">
+
+					   <div class="hack-slides">
+
+						  <div class="slide">All projects are responsive and tested in a wide range of devices</div>
+						  <div class="slide">i take great care of the code to ensure is clean and easily maintainable<span class="+blink ">_</span></div>
+					   </div>
+
+					   <div class="shapes"></div>
+
+					   <div class="arrows">
+						  <div class="arrow-left arrow"><</div>
+						  <div class="arrow-right arrow">></div>
+					   </div>
+
+					 </div>
+					
+			</div>
+ 
+ 
+ 
+ 
+ 
+ 
+
+             <div class="section-text align-center mbr-fonts-style display-7">I'am web lover, I'm trying to learn as much as possible about it.<div><br>I work with Wordpress every day and i am up to date with the latest in functionality, responsiveness and design trends.<br><br><div>
+				</div><div></div></div><br><div><div><span style="font-size: 1rem;">Usually I deal with Server-side / Client-side Coding , Databases &amp; Git<span class="+blink ">_</span></span></div></div>
+			</div>
+	
+			
+			
