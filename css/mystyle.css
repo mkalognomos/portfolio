@@ -99,6 +99,7 @@ li {
 .projects .project-grid .cocacola .overlay { background-color: #de0a1c; }
 .projects .project-grid .medosis .overlay { background-color: #46c97f; }
 .projects .project-grid .diros .overlay { background-color: #ffaf00; }
+.projects .project-grid .health .overlay { background-color: green; }
 /*  Projects Backgrounds End */
 
 .section.startups .startup-grid .box img.logo {
