@@ -1588,12 +1588,6 @@ print {
     padding: 1.25rem;
     font-weight: 900;
     border: 7px dotted #fff;
-
-
-        &:hover,
-        &:focus {
-            border: 7px dotted orange;
-    }
 }
 
 a.box:hover,
