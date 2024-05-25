@@ -17,6 +17,10 @@
     margin-top: 40px;
 }
 
+.copyright {
+  color: #000;
+}
+
 li {
     font-size: 18px;
     font-weight: 300;
@@ -36,6 +40,7 @@ li {
 #yearsOfWork{
     font-weight: 700;
     font-size: 20px;
+    color: #f97f14;
 }
 /*  Top Right Button */
 .btn {

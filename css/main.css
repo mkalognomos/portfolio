@@ -1022,12 +1022,12 @@ a.has-text-dark:focus {
 }
 
 .has-text-primary {
-    color: #000000 !important;
+    color: #f97f14 !important;
 }
 
 a.has-text-primary:hover,
 a.has-text-primary:focus {
-    color: #6d10ff !important;
+    color:rgba(249, 127, 20, 0.44) !important
 }
 
 .has-background-primary {
@@ -1583,10 +1583,11 @@ print {
 .box {
     background-color: #fff;
     border-radius: 6px;
-    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
-    color: #293347;
+    color: #293347!important;
+    border: 7px dotted orange;
     display: block;
     padding: 1.25rem;
+    font-weight: 900;
 }
 
 a.box:hover,
@@ -2149,14 +2150,14 @@ a.box:active {
 
 .button.is-primary.is-outlined {
     background-color: transparent;
-    border-color: #fff;
-    color: #000000;
+    border-color: #f97f14;
+    color: #f97f14;
 }
 
 .button.is-primary.is-outlined:hover,
 .button.is-primary.is-outlined:focus {
-    background-color: #000000;
-    border-color: #000000;
+    background-color: #f97f14;
+    border-color: #f97f14;
     color: #fff;
 }
 
@@ -9576,6 +9577,7 @@ print {
 
 .hero.is-white .subtitle {
     color: rgba(10, 10, 10, 0.9);
+    font-weight: 500;
 }
 
 .hero.is-white .subtitle a:not(.button),
@@ -10917,8 +10919,8 @@ h6 {
 }
 
 .subtitle {
-    font-family: "europa", sans-serif;
-    font-weight: 300;
+    font-family: "eurostile", sans-serif;
+    font-weight: 600;
     line-height: 1.5;
 }
 
@@ -11136,12 +11138,13 @@ hr {
 }
 
 .section.is-primary {
-    background-color: #000000;
+    background-color: #fff;
     color: #fff;
 }
 
 .section.is-primary .title {
-    color: #fff;
+    color: #000;
+    font-weight: 800;
 }
 
 .section.is-primary .subtitle {
@@ -11188,7 +11191,7 @@ hr {
 .section.skills {
     margin-top: -14rem;
     padding-bottom: 6rem;
-    background-color: #f3f2f2;
+    background-color: #fff;
 }
 
 .section.skills .box {
@@ -11202,14 +11205,14 @@ hr {
 
 .section.skills .box .content .columns .column {
     padding: 50px 30px;
-    border-bottom: 1px solid #e6ecf8;
-    border-right: 0px solid #e6ecf8;
+/*     border-bottom: 1px solid #e6ecf8;
+    border-right: 0px solid #e6ecf8; */
 }
 
 @media screen and (min-width: 769px) {
     .section.skills .box .content .columns .column {
-        border-bottom: 0px solid #e6ecf8;
-        border-right: 1px solid #e6ecf8;
+/*         border-bottom: 0px solid #e6ecf8;
+        border-right: 1px solid #e6ecf8; */
         padding: 60px 35px;
     }
 }
@@ -11266,7 +11269,7 @@ hr {
 
 .projects .button.is-primary.is-outlined.is-medium {
     padding: 1.25em 2em;
-    font-weight: 400;
+    font-weight: 800;
     border-width: 2px;
     margin-top: 2rem;
 }
@@ -11368,8 +11371,8 @@ hr {
 }
 
 .section.clients {
-    border-top: 1px solid #e6ecf8;
-}
+/*     border-top: 1px solid #e6ecf8;
+ */}
 
 .section.clients .client-grid {
     padding-top: 3rem;
@@ -11378,6 +11381,7 @@ hr {
 .section.startups {
     margin-top: -13rem;
     padding-bottom: 6rem;
+    background-color: #fff;
 }
 
 @media screen and (min-width: 769px) {
@@ -11491,16 +11495,15 @@ hr {
 
 .section.call-to-action .title,
 .section.call-to-action p {
-    color: #fff;
     margin-bottom: 0;
 }
 
 .section.call-to-action .box {
     padding: 3.5rem 2rem;
     margin-top: -9rem;
-    background-color: #2455c3;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px #2455c3;
-}
+    background-color: #fff;
+/*     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px #2455c3;
+ */}
 
 @media screen and (min-width: 769px) {
     .section.call-to-action .box {
@@ -11562,7 +11565,7 @@ footer .social-icons a.button {
     margin: 0 0.2rem;
     height: 47px;
     width: 47px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid #000;
 }
 
 @media screen and (min-width: 769px) {
@@ -11573,6 +11576,8 @@ footer .social-icons a.button {
 
 footer .social-icons a.button.is-medium {
     font-size: 1.05rem;
+    color: #f97f14;
+    border-color: #f97f14;
 }
 
 @media screen and (min-width: 769px) {
@@ -11587,9 +11592,9 @@ footer .social-icons a.button .icon.is-small {
 }
 
 footer .social-icons a.button:hover {
-    background: #fff;
-    color: #2455c3;
-    border: 2px solid #fff;
+    background: #f97f14;
+    color: #fff;
+    transition: all 1ms ease-in;
 }
 
 footer .copyright {
@@ -11698,9 +11703,10 @@ img.success {
 
 .box .button.is-primary.is-outlined:hover,
 .box .button.is-primary.is-outlined:focus {
-    background-color: #fff;
-    border-color: #fff;
-    color: #000 !important;
+    background-color: #f97f14;
+    border-color: #f97f14;
+    color: #fff !important;
+    font-weight: 900;
 }
 
 /*# sourceMappingURL=main.css.map */
