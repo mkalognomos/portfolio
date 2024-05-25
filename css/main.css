@@ -1584,10 +1584,16 @@ print {
     background-color: #fff;
     border-radius: 6px;
     color: #293347!important;
-    border: 7px dotted orange;
     display: block;
     padding: 1.25rem;
     font-weight: 900;
+    border: 7px dotted #fff;
+
+
+        &:hover,
+        &:focus {
+            border: 7px dotted orange;
+    }
 }
 
 a.box:hover,
@@ -11273,6 +11279,26 @@ hr {
     border-width: 2px;
     margin-top: 2rem;
 }
+
+
+.projects .button.is-primary.is-outlined:hover:not(#loadMore), 
+.projects .button.is-primary.is-outlined:focus:not(#loadMore) {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+    border: 4px dotted orange;
+}
+
+.projects .button.is-primary.is-outlined:not(#loadMore) {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+    width: 140px;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: 400;
+}
+    
 
 .projects .project-grid {
     padding: 2rem 0 4rem;
