@@ -21,6 +21,10 @@
   color: #000;
 }
 
+ul {
+	list-style-position: inside;
+}
+
 li {
     font-size: 18px;
     font-weight: 300;
@@ -34,6 +38,7 @@ li {
   padding: 2rem;
   max-width: 1500px;
   margin: auto;
+  font-size: 18px;
 }
 
 .section-block {
