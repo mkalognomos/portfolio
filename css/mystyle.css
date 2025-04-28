@@ -3,7 +3,7 @@
 }
 
 .noContent {
- cursor: no-drop;
+    cursor: no-drop;
 }
 
 .employer{
@@ -11,8 +11,8 @@
     font-size: 12px;
 }
 
-.want-to-see-more{
-	display:none;
+.want-to-see-more {
+    display:none;
     justify-content: center;
     margin-top: 40px;
 }
@@ -31,12 +31,13 @@ li {
 }
 
 .skill-sections {
+  font-family: eurostile, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 3rem;
   padding: 2rem;
-max-width: 79rem;
+  max-width: 79rem;
   margin: auto;
   font-size: 18px;
 }
