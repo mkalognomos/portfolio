@@ -44,6 +44,27 @@ body {
   color: #111;
 
   background: #f3f3f3;
+  line-height: 1.5;
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 12px;
+  background: #111;
+  color: #fff;
+  padding: 10px 14px;
+  z-index: 2000;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+a:focus-visible {
+  outline: 3px solid #111;
+  outline-offset: 3px;
 }
 
 /* =========================
@@ -97,6 +118,7 @@ h1 {
   font-weight: 300;
   letter-spacing: 0.1em;
   margin-bottom: 45px;
+  margin-top: 50px;
 }
 
 h2 {
@@ -110,6 +132,7 @@ h2 {
 
 .section {
   margin-bottom: 32px;
+ padding: 0 75px;
 }
 
 /* section title */
@@ -146,17 +169,16 @@ DIVIDER LINES
 .divider {
   /* almost full‑width but with 10px space either side */
   width: calc(100% - 20px);
-  height: 2px; /* thicker line */
+  height: 1px;
 
-  /* lighter grey to soften the look */
-  background: #777;
+  background: #000;
 
   margin: 35px 10px;
 }
 
 /* small sidebar menu separators */
 .sidebar a {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #000;
 }
 .sidebar a:last-child {
   border-bottom: none;
@@ -189,9 +211,9 @@ FOOTER (FIXED)
 }
 
 .fixed-footer .copy {
-  margin-left: auto;
-  color: #777;
-  font-size: 13px;
+    margin-left: auto;
+    color: black;
+    font-size: 11px;
 }
 
 /* legacy footer (keep for reference, now hidden) */
@@ -255,6 +277,40 @@ MY WORK GRID SECTION
   aspect-ratio: 16 / 10;
 }
 
+#my-work .work-grid {
+  grid-auto-flow: dense;
+  grid-auto-rows: 110px;
+}
+
+#my-work .work-item {
+  aspect-ratio: auto;
+  height: 100%;
+}
+
+#my-work .work-item:nth-child(6n + 1) {
+  grid-row: span 3;
+}
+
+#my-work .work-item:nth-child(6n + 2) {
+  grid-row: span 2;
+}
+
+#my-work .work-item:nth-child(6n + 3) {
+  grid-row: span 2;
+}
+
+#my-work .work-item:nth-child(6n + 4) {
+  grid-row: span 3;
+}
+
+#my-work .work-item:nth-child(6n + 5) {
+  grid-row: span 2;
+}
+
+#my-work .work-item:nth-child(6n + 6) {
+  grid-row: span 2;
+}
+
 .work-item img {
   width: 100%;
   height: 100%;
@@ -294,7 +350,18 @@ MY WORK GRID SECTION
   transition: font-size 0.3s ease;
 }
 
-.work-item:hover .work-overlay-title {
+.made-for-fun .work-item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.made-for-fun .work-item-description {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #111;
+  letter-spacing: 0.03em;
 }
 
 /* =========================
@@ -311,12 +378,59 @@ RESPONSIVE
   .work-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  #my-work .work-grid {
+    grid-auto-rows: 105px;
+  }
+
+  #my-work .work-item:nth-child(4n + 1) {
+    grid-row: span 3;
+  }
+
+  #my-work .work-item:nth-child(4n + 2) {
+    grid-row: span 2;
+  }
+
+  #my-work .work-item:nth-child(4n + 3) {
+    grid-row: span 2;
+  }
+
+  #my-work .work-item:nth-child(4n + 4) {
+    grid-row: span 3;
+  }
+
   .technologies-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 700px) {
+  body {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    margin-top: 24px;
+    margin-bottom: 28px;
+  }
+
+  .section {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 18px;
+    letter-spacing: 0.08em;
+  }
+
+  .section-text {
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+
   .container {
     margin-left: 30px;
     width: auto;
@@ -342,7 +456,7 @@ SIDEBAR
   height: 100%;
   /* let the layered background show through */
   background: transparent;
-  border-right: 2px solid #333; /* slightly lighter vertical divider */
+  border-right: 1px solid #000;
   box-sizing: border-box;
   z-index: 1000;
   /* use same fonts as body */
@@ -351,12 +465,20 @@ SIDEBAR
   flex-direction: column;
 }
 
+.menu-toggle {
+  display: none;
+}
+
+.sidebar-links {
+  display: contents;
+}
+
 .sidebar-logo {
   padding: 20px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 2px solid #777;
+  border-bottom: 1px solid #000;
 }
 
 .sidebar-logo img {
@@ -373,7 +495,7 @@ SIDEBAR
   font-weight: 300;
   font-size: 20px;
   font-family: inherit;
-  border-bottom: 2px solid #777;
+  border-bottom: 1px solid #000;
 }
 
 .sidebar a:last-child {
@@ -392,18 +514,45 @@ SIDEBAR
     width: 100%;
     height: auto;
     border-right: none;
-    border-bottom: 2px solid #777;
+    border-bottom: 1px solid #000;
     padding: 0;
-    display: flex;
-    justify-content: space-around;
+    display: block;
   }
-  .sidebar a {
-    padding: 12px 8px;
-    border-bottom: none;
-    border-right: 2px solid #777;
+
+  .menu-toggle {
+    width: 100%;
+    display: block;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #000;
+    color: #111;
+    font-family: inherit;
+    cursor: pointer;
+    touch-action: manipulation;
   }
-  .sidebar a:last-child {
+
+  .sidebar-links {
+    display: none;
+  }
+
+  .sidebar-links.is-open {
+    display: block;
+  }
+
+  .sidebar-links a {
+    display: block;
+    padding: 12px 16px;
+    border-bottom: 1px solid #000;
     border-right: none;
+    font-size: 14px;
+  }
+
+  .sidebar-links a:last-child {
+    border-bottom: none;
   }
   .container {
     margin-left: 0;
@@ -423,5 +572,36 @@ SIDEBAR
   }
   .work-grid {
     grid-template-columns: 1fr;
+  }
+
+  #my-work .work-grid {
+    grid-auto-rows: auto;
+  }
+
+  #my-work .work-item {
+    aspect-ratio: 16 / 10;
+  }
+
+  #my-work .work-item:nth-child(n) {
+    grid-row: auto;
+  }
+
+  .work-overlay-title {
+    font-size: 18px;
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

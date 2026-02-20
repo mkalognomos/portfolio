@@ -5,10 +5,10 @@ REAL BACKGROUND ENGINE
 
 const gradients = [
   // warm peachy-cream pastel palette
-  "linear-gradient(120deg, #fef5e7, #f9e4d4)",  // cream start
-  "linear-gradient(120deg, #fce4d6, #f8d9c4)",  // warm peach
-  "linear-gradient(120deg, #faddc1, #f5d4b0)",  // apricot
-  "linear-gradient(120deg, #f5e6d3, #efe0cd)",  // soft tan
+  "linear-gradient(120deg, #d1c0b4, #d1c0b4)",  // cream start
+  "linear-gradient(120deg, #c4daf8, #c4daf8)",  // warm peach
+  "linear-gradient(120deg, #a6debcf6, #a6debcf6)",  // apricot
+  "linear-gradient(120deg, #c1d3ee, #c1d3ee)",  // soft tan
 ];
 
 let index = 0;
@@ -34,7 +34,7 @@ function animateBackground() {
 }
 
 // pause longer between transitions for a slower effect
-setInterval(animateBackground, 12000);
+setInterval(animateBackground, 14000);
 
 /* =========================
 YEARS OF WORK CALCULATOR
@@ -53,3 +53,37 @@ if (yearsElement) {
   yearsElement.textContent = DateDiff.inYears(d1, d2);
 }
 // Years of Work Calculator END
+
+/* =========================
+MOBILE MENU TOGGLE
+========================= */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const sidebarLinks = document.getElementById("sidebar-links");
+
+if (menuToggle && sidebarLinks) {
+  function toggleMobileMenu() {
+    const isOpen = sidebarLinks.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  }
+
+  menuToggle.addEventListener("click", toggleMobileMenu);
+
+  menuToggle.addEventListener(
+    "touchend",
+    function(event) {
+      event.preventDefault();
+      toggleMobileMenu();
+    },
+    { passive: false }
+  );
+
+  sidebarLinks.querySelectorAll("a").forEach(function(link) {
+    link.addEventListener("click", function() {
+      if (window.innerWidth <= 700) {
+        sidebarLinks.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+}

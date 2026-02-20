@@ -25,31 +25,71 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- layered background -->
 
-    <div class="bg-container">
-      <div class="bg-layer" id="bg1"></div>
-      <div class="bg-layer" id="bg2"></div>
+    <div class="bg-container" aria-hidden="true">
+      <div class="bg-layer" id="bg1" aria-hidden="true"></div>
+      <div class="bg-layer" id="bg2" aria-hidden="true"></div>
     </div>
 
     <!-- content -->
 
     <!-- sidebar navigation -->
-    <div class="sidebar">
+    <nav class="sidebar" aria-label="Main navigation">
       <div class="sidebar-logo">
         <img src="img/logo.png" alt="Logo" />
       </div>
-      <a href="#about">About</a>
-      <a href="#overview">Overview</a>
-      <a href="#technical">Technical Skills</a>
-      <a href="#soft">Soft-Skills</a>
-      <a href="#technologies">Technologies</a>
-      <a href="#my-work">Work</a>
-      <a href="#made-for-fun">Fun made</a>
-    </div>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="sidebar-links"
+      >
+        MENU
+      </button>
+      <div id="sidebar-links" class="sidebar-links">
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#overview">Overview</a>
+        <a href="#technical">Technical Skills</a>
+        <a href="#pm-skills">PM Skills</a>
+        <a href="#soft">Soft Skills</a>
+        <a href="#technologies">Technologies</a>
+        <a href="#my-work">Work</a>
+        <a href="#made-for-fun">Made for fun</a>
+      </div>
+    </nav>
 
-    <div class="container">
-      <h1>Hey, I'm Michalis, nice to meet you</h1>
+    <main id="main-content" class="container">
+      <div class="section">
+      <h1 style="text-decoration: underline;">Hey, I'm Michalis, nice to meet you</h1>
+      </div>
+
+      <div class="section" id="contact">
+        <div class="section-title">Contact</div>
+
+        <div class="section-text">
+          Email:
+          <a href="mailto:mkalognomos@gmail.com">mkalognomos@gmail.com</a
+          ><br />
+          GitHub:
+          <a href="https://github.com/mkalognomos" target="_blank" rel="noopener noreferrer"
+            >https://github.com/mkalognomos</a
+          ><br />
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/michail-k-48b102137/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >https://www.linkedin.com/in/michail-k-48b102137/</a
+          ><br />
+           Mobile: <a href="tel:+306955003334">(+30) 6955003334</a><br />
+
+        </div>
+      </div>
+
+      <div class="divider"></div>
 
       <div class="section" id="about">
         <div class="section-title">About</div>
@@ -59,8 +99,8 @@
           <span id="yearsOfWork">12</span> years ago, I 've done many projects
           for agencies and privates. I craft and guide the development process
           of complex web applications. I focus on optimizing performance,
-          maintaining code quality, and ensuring cross-browser compatibility. I
-          collaborate closely with designers, developers, and project
+          maintaining code quality and ensuring cross-browser accessibility. 
+          I collaborate closely with designers, developers, and project
           stakeholders while i deliver robust front-end architectures that
           integrate seamlessly with every back-end system.
         </div>
@@ -72,18 +112,18 @@
         <div class="section-title">Overview</div>
 
         <div class="section-text">
-          Angular — Component Architecture, RxJS, State Management<br />
-          Sass (SCSS), Flexbox, and Modern CSS Techniques<br />
-          Integration with RESTful & Third-Party APIs<br />
-          Deep Understanding of Vanilla JavaScript (ES6+)<br />
-          UI/UX Principles — From Wireframes to Interactive Prototypes<br />
-          Custom WordPress Theming, Plugin Development & Advanced CPTs<br />
-          Collaborative Task Management in Agile Teams (Jira, Azure Boards)<br />
-          Code Reviews & Continuous Feedback Loops (Azure Repos)<br />
-          Figma — From Design Specs to Pixel-Perfect Implementation<br />
-          Working with Modern JS Libraries (e.g., Chart.js, Lodash etc)<br />
-          Azure DevOps — Source Control, Backlog Management, Pipelines<br />
-          Reusable Component Libraries & Design Systems
+          - Frontend architecture for scalable enterprise applications<br />
+          - Component-driven design systems and reusable ui libraries<br />
+          - State management patterns and predictable data flow strategy<br />
+          - Api integration planning for internal and third-party services<br />
+          - Performance-first implementation with core web vitals focus<br />
+          - Technical planning from figma specs to production delivery<br />
+          - Agile project management with jira and azure boards<br />
+          - Sprint planning, estimation, and task breakdown ownership<br />
+          - Cross-team collaboration with designers, backend, and qa<br />
+          - Code review workflows and quality gates in azure repos<br />
+          - Release coordination and deployment tracking in azure devops<br />
+          - Risk identification, scope alignment, and stakeholder updates
           <br /><br />
           <strong>Languages I speak:</strong>JavaScript, TypeScript
         </div>
@@ -95,51 +135,68 @@
         <div class="section-title">Technical Skills</div>
 
         <div class="section-text">
-          Build Scalable Frontend Apps<br />
-          Use Debugging Tools to Fix Cross-Browser & Cross-Device Issues<br />
-          Write Clean, Maintainable Code using OOP Principles<br />
-          Develop & Deploy Cross-Platform Web Applications<br />
-          Document Project Architecture, Build Process & Tech Decisions<br />
-          Translate Wireframes & Figma Designs into Functional Interfaces<br />
-          Implement Industry Best Practices in Code Quality & Performance<br />
-          Version Control with Git & Azure DevOps Workflows<br />
-          Refactor & Upgrade Legacy Codebases to Meet Modern Standards<br />
-          Build & Extend WordPress Themes, Plugins, and Custom Post Types<br />
-          Debug & Optimize Large-Scale Angular Applications<br />
-          Consume REST APIs and Integrate Third-Party Services<br />
-          Design Component-Based UI Architecture for Reusability<br />
-          Ensure Accessibility (a11y) and SEO Best Practices<br />
-          Collaborate in Agile Teams with Code Reviews & Task Management<br />
-          Optimize Performance, Lazy Loading, and Core Web Vitals<br />
-          Apply Responsive & Mobile-First Design Principles<br />
-          CI/CD Pipelines for Deployments
+          - Design component-based ui architectures<br />
+          - Build scalable frontend apps<br />
+          - Use debugging tools to fix cross-browser and cross-device issues<br />
+          - Write clean, maintainable code using oop principles<br />
+          - Develop and deploy cross-platform web applications<br />
+          - Document project architecture, build process and tech decisions<br />
+          - Translate wireframes and figma designs into functional interfaces<br />
+          - Implement industry best practices in code quality & performance<br />
+          - Version control workflows<br />
+          - Refactor and upgrade legacy codebases to meet modern standards<br />
+          - Build and extend wordpress themes, plugins, and custom post types<br />
+          - Debug & optimize large-scale applications<br />
+          - Consume rest apis and integrate third-party services<br />
+          - Ensure accessibility (a11y) and seo best practices<br />
+          - Collaborate in agile teams with code reviews and task management<br />
+          - Optimize performance, lazy loading, and core web vitals<br />
+          - Apply responsive and mobile-first design principles<br />
+          - Create ci/cd pipelines for deployments and automated testing
 
           <br /><br />
           <strong>Things I enjoy creating:</strong>
-          Web Portals, Web Applications, Banking Platforms, Interactive
+          Web Portals, Web Applications, Banking Platform, Interactive
           Dashboards, Real-Time Data Interfaces, Admin Panels, SaaS Products,
-          E-commerce Frontends, Internal Tools
+          E-commerce, Internal Tools
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section" id="pm-skills">
+        <div class="section-title">PM Skills</div>
+
+        <div class="section-text">
+          - Sprint planning, estimation, and team capacity alignment<br />
+          - Backlog prioritization based on business value and risk<br />
+          - Project roadmap definition and milestone tracking<br />
+          - Cross-team coordination with product, design, backend and qa<br />
+          - Scope management and dependency planning across teams<br />
+          - Stakeholder communication with clear status and blockers<br />
+          - Delivery forecasting and timeline risk mitigation<br />
+          - Process improvement through  action plans
         </div>
       </div>
 
       <div class="divider"></div>
 
       <div class="section" id="soft">
-        <div class="section-title">Soft-Skills</div>
+        <div class="section-title">Soft Skills</div>
 
         <div class="section-text">
-          Agile Team Player — Collaborative, Communicative & Adaptive<br />
-          Detail-Oriented — Precision in Both Code & UI<br />
-          Open to Frequent Feedback<br />
-          Efficient Multitasker — Prioritize & Deliver Across Projects<br />
-          Self-Starter with a Strong Sense of Ownership<br />
-          Creative & Strategic Problem Solver<br />
-          Clear & Effective — Tech & Non-Tech Alike<br />
-          Thrive Under Pressure & Tight Deadlines<br />
-          Prove by Quality and Consistency
+          - Agile team player — collaborative, communicative and adaptive<br />
+          - Detail-oriented<br />
+          - Open to frequent feedback<br />
+          - Efficient multitasker — prioritize and deliver across projects<br />
+          - Self-starter with a strong sense of ownership<br />
+          - Strategic problem solver<br />
+          - Tech and non-tech alike speaker<br />
+          - Thrive under pressure<br />
+          - Proved by consistency
 
           <br /><br />
-          <strong>Basic Characteristics:</strong>
+          <strong>Characteristics:</strong>
           Teamwork, Patience, Accurate<br /><br />
         </div>
       </div>
@@ -147,11 +204,7 @@
       <div class="divider"></div>
 
       <div class="section" id="technologies">
-        <div class="section-title">Technologies</div>
-
-        <div class="section-text">
-          I'm proud to use these awesome tools and technologies:
-        </div>
+        <div class="section-title">Technologies that i use</div>
 
         <div class="technologies-grid">
           <div class="tech-item">
@@ -223,7 +276,7 @@
             <span class="tech-label">PHP</span>
           </div>
           <div class="tech-item">
-            <img src="img/technologies/ps.png" alt="Photoshop" />
+            <img src="img/technologies/ps.png" alt="Adobe PS" />
             <span class="tech-label">Photoshop</span>
           </div>
           <div class="tech-item">
@@ -235,7 +288,7 @@
 
       <div class="divider"></div>
 
-      <div class="my-work" id="my-work">
+      <div class="section my-work" id="my-work">
         <h2 class="section-title">A taste of my work</h2>
 
         <div class="work-grid">
@@ -246,7 +299,7 @@
                 href="https://trikalacity.gr/"
                 target="_blank"
                 class="work-overlay-title"
-                >MUNICIPALITY OF TRIKALA</a
+                >Municipality of Trikala</a
               >
             </div>
           </div>
@@ -258,7 +311,7 @@
                 href="https://agiavarvara.gr/"
                 target="_blank"
                 class="work-overlay-title"
-                >MUNICIPALITY OF AGIA VARVARA</a
+                >Municipality of Agia Varvara</a
               >
             </div>
           </div>
@@ -270,7 +323,7 @@
                 href="https://aquoliavillas-paros.gr/"
                 target="_blank"
                 class="work-overlay-title"
-                >AQUOLIA VILLAS</a
+                >Aquolia Villas</a
               >
             </div>
           </div>
@@ -294,7 +347,7 @@
                 href="https://www.cretadental.com/"
                 target="_blank"
                 class="work-overlay-title"
-                >Creta Dental Clinic Site</a
+                >Creta Dental</a
               >
             </div>
           </div>
@@ -333,7 +386,7 @@
                 href="https://entrasoft.gr/"
                 target="_blank"
                 class="work-overlay-title"
-                >ENTRASOFT</a
+                >Entrasoft</a
               >
             </div>
           </div>
@@ -345,7 +398,7 @@
                 href="https://eosmed.eu/"
                 target="_blank"
                 class="work-overlay-title"
-                >EOSMED</a
+                >Eosmed</a
               >
             </div>
           </div>
@@ -357,7 +410,7 @@
                 href="https://palaiofaliro.gr/"
                 target="_blank"
                 class="work-overlay-title"
-                >MUNICIPALITY OF PALAIO FALIRO</a
+                >Municipality of Palaio Faliro</a
               >
             </div>
           </div>
@@ -369,7 +422,7 @@
                 href="https://www.galatsi.gov.gr/"
                 target="_blank"
                 class="work-overlay-title"
-                >MUNICIPALITY OF GALATSI</a
+                >Municipality of Galatsi</a
               >
             </div>
           </div>
@@ -381,7 +434,7 @@
                 href="https://gerbesiotis.gr/"
                 target="_blank"
                 class="work-overlay-title"
-                >Gerbe Dental</a
+                >Dental Clinic</a
               >
             </div>
           </div>
@@ -393,7 +446,7 @@
                 href="https://dimoskarditsas.gov.gr/"
                 target="_blank"
                 class="work-overlay-title"
-                >MUNICIPALITY OF KARDITSA</a
+                >Municipality of Karditsa</a
               >
             </div>
           </div>
@@ -436,41 +489,51 @@
         </div>
       </div>
 
-      <div class="my-work made-for-fun" id="made-for-fun">
-        <h2 class="section-title">made for fun</h2>
+      <div class="section my-work made-for-fun" id="made-for-fun">
+        <h2 class="section-title">Made for fun</h2>
 
         <div class="work-grid">
-          <div class="work-item">
-            <img src="img/projects/ng-simple-seo.jpg" alt="Simple SEO" />
-            <div class="work-overlay">
-              <a
-                href="https://www.npmjs.com/package/ng-simple-seo"
-                target="_blank"
-                class="work-overlay-title"
-                >ng-simple-seo</a
-              >
+          <div class="work-item-card">
+            <div class="work-item">
+              <img src="img/projects/ng-simple-seo.jpg" alt="Simple SEO" />
+              <div class="work-overlay">
+                <a
+                  href="https://www.npmjs.com/package/ng-simple-seo"
+                  target="_blank"
+                  class="work-overlay-title"
+                  >ng-simple-seo</a
+                >
+              </div>
             </div>
+            <p class="work-item-description">
+              A very light weight seo library that adds all the necessary meta
+              tags to your Angular Application.
+            </p>
           </div>
 
-          <div class="work-item">
-            <img src="img/projects/versions.jpg" alt="Versions" />
-            <div class="work-overlay">
-              <a
-                href="https://github.com/mkalognomos/updatedbversion"
-                target="_blank"
-                class="work-overlay-title"
-                >DB-Version-Updater</a
-              >
-              > >
+          <div class="work-item-card">
+            <div class="work-item">
+              <img src="img/projects/versions.jpg" alt="Versions" />
+              <div class="work-overlay">
+                <a
+                  href="https://github.com/mkalognomos/updatedbversion"
+                  target="_blank"
+                  class="work-overlay-title"
+                  >DB-Version-Updater</a
+                >
+              </div>
             </div>
+            <p class="work-item-description">
+              Α script that automates the process of db version update.
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <!-- fixed footer -->
     <footer class="fixed-footer">
-      <div class="copy">Copyright © Kalognomos Michalis Since 2008</div>
+      <div class="copy">Copyright © Kalognomos Michalis , Since 2008</div>
     </footer>
 
     <script src="script.js"></script>
