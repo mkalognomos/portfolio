@@ -1,12 +1,12 @@
 /* =========================
 REAL BACKGROUND ENGINE
 (layer crossfade gradients)
-========================= */
+=========================
 const gradients = [
-  "linear-gradient(120deg, #d4b9a6, #d4b9a6)",  // cream start
-  "linear-gradient(120deg, #a9bfdd, #a9bfdd)",  // warm peach
-  "linear-gradient(120deg, #89b79c, #89b79c)",  // apricot
-  "linear-gradient(11520deg, #98aac4, #98aac4)",  // soft tan4
+  "linear-gradient(11520deg, #cddcf1, #cddcf1)",  // soft tan4
+  "linear-gradient(120deg, #f5ddcc, #f5ddcc)",  // cream start
+  "linear-gradient(120deg, #cedef4, #cedef4)",  // warm peach
+  "linear-gradient(120deg, #c7f0d8, #c7f0d8)",  // apricot
 ];
 
 let index = 0;
@@ -32,7 +32,9 @@ function animateBackground() {
 }
 
 // pause longer between transitions for a slower effect
-setInterval(animateBackground, 20000);
+setInterval(animateBackground, 15000);
+
+*/
 
 /* =========================
 YEARS OF WORK CALCULATOR
