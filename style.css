@@ -31,7 +31,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  /* smooth anchor navigation */
   scroll-behavior: smooth;
 }
 
@@ -67,6 +66,55 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
+.powered-by {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #111;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.powered-by-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.scroll-top-btn {
+  display: none !important;
+  position: fixed;
+  right: 20px;
+  bottom: 72px;
+  z-index: 1200;
+  width: 58px;
+  height: 58px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background: #ebebeb;
+  color: #111;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.15;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 /* =========================
 BACKGROUND ENGINE (LAYERED)
 ========================= */
@@ -83,8 +131,8 @@ BACKGROUND ENGINE (LAYERED)
   inset: 0;
 
   opacity: 0;
-
-  transition: opacity 4s linear;
+  transition: opacity 6s ease-in-out;
+  will-change: opacity;
 }
 
 /* =========================
@@ -132,7 +180,7 @@ h2 {
 
 .section {
   margin-bottom: 32px;
- padding: 0 75px;
+  padding: 0 110px;
 }
 
 /* section title */
@@ -191,18 +239,20 @@ FOOTER (FIXED)
 .fixed-footer {
   background: transparent;
   padding: 20px 30px;
-  border-top: 2px solid #777;
+  border-top: 1px solid #000;
   display: flex;
   align-items: center;
   gap: 24px;
   margin-top: 60px;
+  margin-left: 320px;
+  width: calc(100% - 320px - 10px);
+  box-sizing: border-box;
 }
 
 .fixed-footer a {
   text-decoration: none;
   color: #111;
   border-bottom: 1px solid transparent;
-  transition: border-bottom 0.3s ease;
   font-size: 13px;
 }
 
@@ -242,11 +292,6 @@ TECHNOLOGIES GRID SECTION
   width: 80px;
   height: 80px;
   object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.tech-item img:hover {
-  transform: scale(1.1);
 }
 
 .tech-label {
@@ -317,37 +362,35 @@ MY WORK GRID SECTION
   object-fit: cover;
   display: block;
   border: 1px so;
-  transition: transform 0.3s ease;
-}
-
-.work-item:hover img {
-  transform: scale(1.05);
 }
 
 .work-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 1;
-  transition: background 0.3s ease;
 }
 
 .work-item:hover .work-overlay {
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .work-overlay-title {
   color: #fff;
   font-size: 36px;
   font-weight: 800;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   text-decoration: none;
   padding: 40px;
   border: none;
-  transition: font-size 0.3s ease;
 }
 
 .made-for-fun .work-item-card {
@@ -405,6 +448,27 @@ RESPONSIVE
 }
 
 @media (max-width: 700px) {
+  .scroll-top-btn {
+    right: 12px;
+    bottom: 56px;
+    width: 54px;
+    height: 54px;
+    font-size: 10px;
+  }
+
+  .powered-by {
+    top: 8px;
+    right: 8px;
+    padding: 6px 8px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .powered-by-icon {
+    width: 12px;
+    height: 12px;
+  }
+
   body {
     font-size: 12px;
   }
@@ -421,7 +485,7 @@ RESPONSIVE
   }
 
   .section-title {
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.08em;
   }
 
@@ -436,7 +500,7 @@ RESPONSIVE
     width: auto;
   }
   .technologies-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
   .tech-item img {
@@ -564,6 +628,8 @@ SIDEBAR
     flex-direction: column;
     gap: 8px;
     padding: 12px 20px;
+    margin-left: 0;
+    width: calc(100% - 20px);
   }
 
   .fixed-footer .copy {

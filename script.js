@@ -2,13 +2,12 @@
 REAL BACKGROUND ENGINE
 (layer crossfade gradients)
 ========================= */
-
 const gradients = [
   // warm peachy-cream pastel palette
-  "linear-gradient(120deg, #d1c0b4, #d1c0b4)",  // cream start
-  "linear-gradient(120deg, #c4daf8, #c4daf8)",  // warm peach
-  "linear-gradient(120deg, #a6debcf6, #a6debcf6)",  // apricot
-  "linear-gradient(120deg, #c1d3ee, #c1d3ee)",  // soft tan
+  "linear-gradient(120deg, #d1c0b4db, #d1c0b4db)",  // cream start
+  "linear-gradient(120deg, #c4daf8c1, #c4daf8c1)",  // warm peach
+  "linear-gradient(120deg, #a6debd9f, #a6debd9f)",  // apricot
+  "linear-gradient(120deg, #c1d3eeaf, #c1d3eeaf)",  // soft tan
 ];
 
 let index = 0;
@@ -49,8 +48,12 @@ var dString = "Feb, 01, 2012";
 var d1 = new Date(dString);
 var d2 = new Date();
 var yearsElement = document.getElementById("yearsOfWork");
+var footerCurrentYearElement = document.getElementById("footerCurrentYear");
 if (yearsElement) {
   yearsElement.textContent = DateDiff.inYears(d1, d2);
+}
+if (footerCurrentYearElement) {
+  footerCurrentYearElement.textContent = d2.getFullYear();
 }
 // Years of Work Calculator END
 
@@ -60,6 +63,8 @@ MOBILE MENU TOGGLE
 
 const menuToggle = document.querySelector(".menu-toggle");
 const sidebarLinks = document.getElementById("sidebar-links");
+const scrollTopBtn = document.querySelector(".scroll-top-btn");
+const SECTION_TOP_OFFSET = 72;
 
 if (menuToggle && sidebarLinks) {
   function toggleMobileMenu() {
@@ -68,22 +73,78 @@ if (menuToggle && sidebarLinks) {
   }
 
   menuToggle.addEventListener("click", toggleMobileMenu);
+}
 
-  menuToggle.addEventListener(
-    "touchend",
-    function(event) {
-      event.preventDefault();
-      toggleMobileMenu();
-    },
-    { passive: false }
-  );
+const sidebarAnchorLinks = Array.from(
+  document.querySelectorAll('.sidebar a[href^="#"]')
+);
 
-  sidebarLinks.querySelectorAll("a").forEach(function(link) {
-    link.addEventListener("click", function() {
-      if (window.innerWidth <= 700) {
-        sidebarLinks.classList.remove("is-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-    });
+function smoothScrollTo(targetY, duration) {
+  const startY = window.pageYOffset;
+  const distance = targetY - startY;
+  const totalDuration = duration || 700;
+  let startTime = null;
+
+  function easeInOutQuad(progress) {
+    return progress < 0.5
+      ? 2 * progress * progress
+      : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+  }
+
+  function animate(currentTime) {
+    if (!startTime) startTime = currentTime;
+
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / totalDuration, 1);
+    const eased = easeInOutQuad(progress);
+
+    window.scrollTo(0, startY + distance * eased);
+
+    if (progress < 1) {
+      requestAnimationFrame(animate);
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+sidebarAnchorLinks.forEach(function(link) {
+  link.addEventListener("click", function(event) {
+    const targetId = link.getAttribute("href");
+    if (!targetId || !targetId.startsWith("#")) return;
+
+    const targetSection = document.querySelector(targetId);
+    if (!targetSection) return;
+
+    event.preventDefault();
+
+    const targetY = Math.max(
+      0,
+      targetSection.getBoundingClientRect().top + window.pageYOffset - SECTION_TOP_OFFSET
+    );
+    smoothScrollTo(targetY, 700);
+
+    if (history.replaceState) {
+      history.replaceState(null, "", targetId);
+    }
+
+    if (window.innerWidth <= 700 && sidebarLinks && menuToggle) {
+      sidebarLinks.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+});
+
+if (scrollTopBtn) {
+  function toggleScrollTopVisibility() {
+    const shouldShow = window.pageYOffset > 280;
+    scrollTopBtn.classList.toggle("is-visible", shouldShow);
+  }
+
+  window.addEventListener("scroll", toggleScrollTopVisibility, { passive: true });
+  toggleScrollTopVisibility();
+
+  scrollTopBtn.addEventListener("click", function() {
+    smoothScrollTo(0, 700);
   });
 }
