@@ -3,11 +3,10 @@ REAL BACKGROUND ENGINE
 (layer crossfade gradients)
 ========================= */
 const gradients = [
-  // warm peachy-cream pastel palette
-  "linear-gradient(120deg, #d1c0b4db, #d1c0b4db)",  // cream start
-  "linear-gradient(120deg, #c4daf8c1, #c4daf8c1)",  // warm peach
-  "linear-gradient(120deg, #a6debd9f, #a6debd9f)",  // apricot
-  "linear-gradient(120deg, #c1d3eeaf, #c1d3eeaf)",  // soft tan
+  "linear-gradient(120deg, #d4b9a6, #d4b9a6)",  // cream start
+  "linear-gradient(120deg, #a9bfdd, #a9bfdd)",  // warm peach
+  "linear-gradient(120deg, #89b79c, #89b79c)",  // apricot
+  "linear-gradient(11520deg, #98aac4, #98aac4)",  // soft tan4
 ];
 
 let index = 0;
@@ -148,3 +147,4 @@ if (scrollTopBtn) {
     smoothScrollTo(0, 700);
   });
 }
+
