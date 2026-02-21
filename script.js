@@ -32,7 +32,7 @@ function animateBackground() {
 }
 
 // pause longer between transitions for a slower effect
-setInterval(animateBackground, 14000);
+setInterval(animateBackground, 20000);
 
 /* =========================
 YEARS OF WORK CALCULATOR
@@ -147,4 +147,5 @@ if (scrollTopBtn) {
     smoothScrollTo(0, 700);
   });
 }
+
 
