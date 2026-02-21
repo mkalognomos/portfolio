@@ -32,6 +32,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+   min-height: 100%;
 }
 
 body {
@@ -39,11 +40,13 @@ body {
   font-family: "Inter", Arial, sans-serif;
   font-size: 13px;
   font-weight: 300;
-
   color: #111;
-
   background: #f3f3f3;
   line-height: 1.5;
+
+  min-height: 100dvh;                 /* iOS modern fix */
+  min-height: -webkit-fill-available; /* older Safari fallback */
+  padding-top: env(safe-area-inset-top);
 }
 
 .skip-link {
@@ -671,3 +674,4 @@ SIDEBAR
     transition: none !important;
   }
 }
+
