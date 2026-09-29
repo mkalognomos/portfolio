@@ -395,20 +395,6 @@ MY WORK GRID SECTION
   border: none;
 }
 
-.made-for-fun .work-item-card {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.made-for-fun .work-item-description {
-  margin: 0;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #111;
-  letter-spacing: 0.03em;
-}
-
 /* =========================
 RESPONSIVE
 ========================= */
